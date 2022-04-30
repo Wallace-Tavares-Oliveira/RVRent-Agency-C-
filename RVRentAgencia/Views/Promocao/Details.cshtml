@@ -1,0 +1,33 @@
+@model RVRentAgencia.Models.Promocao
+
+@{
+    ViewData["Title"] = "Details Promocao";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Promocao</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id_Promocao">Edit</a> |
+    <a asp-action="Index">Ir para a Lista</a>
+</div>
+</body>
+</html>

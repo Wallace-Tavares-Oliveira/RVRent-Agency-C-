@@ -1,0 +1,70 @@
+@model IEnumerable<RVRentAgencia.Models.Destino>
+
+@{
+    ViewData["Title"] = "Index Destino";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+     @* Conteúdo de corpo *@
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+            </div>
+            <div class="col-md-auto">
+               <img src="~/img/RVDestino.jpg" class="img-thumbnail" width="730x" height="380" alt="">
+            </div>
+            <div class="col col-lg-2">
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <button type="button" class="btn btn-success "><a asp-action="Create">Selecionar Destino</a></button>
+        </div>
+    </div>
+    @* Conteúdo de corpo *@
+
+<table class="table">
+    @* <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Partida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Retorno)
+            </th>
+            <th></th>
+        </tr>
+    </thead> *@
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Retorno)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Destino">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Destino">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Destino">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
